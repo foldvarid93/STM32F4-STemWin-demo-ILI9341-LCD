@@ -50,9 +50,6 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
 #include "crc.h"
-#include "fatfs.h"
-#include "sdio.h"
-#include "gpio.h"
 #include "tim.h"
 
 /* USER CODE BEGIN Includes */
@@ -104,12 +101,8 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  //MX_GPIO_Init();
-  //MX_SDIO_SD_Init();
-  //MX_FATFS_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
-  //GPIO_Init();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   GPIO_InitTypeDef GPIO_InitStruct;
   GPIO_InitStruct.Pin = GPIO_PIN_6 | GPIO_PIN_7;
@@ -122,13 +115,9 @@ int main(void)
   HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
   TIM3->CNT=0x7FFF;
   GUI_Init();
-  //MainTask2();
-  MainTask3();
+  MainTask();
   while(1){
-	  GPIOA->ODR=0x0000;
-	  HAL_Delay(10);
-	  GPIOA->ODR=0x00FF;
-	  HAL_Delay(10);
+
   }
 
   /* USER CODE END 2 */

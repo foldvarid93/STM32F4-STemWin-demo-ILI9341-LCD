@@ -89,7 +89,7 @@ static void _ChangeDataYT(GRAPH_DATA_Handle hData, int Offset) {
 *
 *       MainTask
 */
-void MainTask(void) {
+void MainTask3(void) {
   GUI_CreateDialogBox(_aDialogCreate, GUI_COUNTOF(_aDialogCreate), _cbDialog, WM_HBKWIN, 0, 0);
   while (1) {
     GUI_Delay(50);

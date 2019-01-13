@@ -166,7 +166,7 @@ void MainTask2(void) {
 		}
 	}
 }
-void MainTask3(void) {
+void MainTask(void) {
 	//CreateWindow();
 	U8 i = 0;
 	PROGBAR_Handle RProgBar,GProgBar,BProgBar;
